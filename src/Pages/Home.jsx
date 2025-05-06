@@ -2,6 +2,7 @@ import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
 import { ChevronDown } from 'lucide-react';
 import { UserContext } from "../Context/UserContext";
 import { useContext } from "react";
+import Card from "../Components/Card";
 
 function Home() {
     const { user } = useContext(UserContext);
@@ -63,6 +64,10 @@ function Home() {
                         Fusce vulputate purus sed tempus feugiat.
                     </AccordionItem>
                 </Accordion>
+            </div>
+
+            <div className="w-full h-screen bg-[#1B2316] flex items-center justify-center">
+                <Card />
             </div>
         </section>
     );

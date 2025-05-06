@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+
+.card {
+    background-image: url(./assets/card-bg.svg);
+}
