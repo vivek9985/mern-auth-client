@@ -1,12 +1,11 @@
 import Bag from "../assets/bag.png"
-import Plant from "../assets/plant.png"
 
-export default function Card() {
+export default function Card({ img }) {
 
     return (
         <div className="w-[350px] 2xl:w-[420px] h-[450px] 2xl:h-[520px] card bg-no-repeat bg-center bg-contain p-10 flex items-center gap-3 justify-end">
-            <div className="w-[300px] 2xl:w-[375px] h-[300px] 2xl:h-[375px] flex items-center justify-center">
-                <img src={Plant} alt="" />
+            <div className="w-[300px] 2xl:w-[375px] h-[300px] 2xl:h-[375px] flex items-end justify-center">
+                <img className="w-full h-full object-bottom object-contain" src={img} alt="" />
             </div>
             <div className="w-full">
                 <h3 className="text-[28px] md:text-[32px] xl:text-[38px] font-semibold xl:leading-[52px]">Calathea plant</h3>

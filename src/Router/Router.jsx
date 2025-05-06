@@ -35,7 +35,7 @@ function App() {
     }
 
     return (
-        <main className="mx-auto relative">
+        <main className="">
             <Navbar />
             <div className="py-6 px-4 min-h-[80vh] relative">
                 <Routes>

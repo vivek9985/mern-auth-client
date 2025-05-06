@@ -3,6 +3,10 @@ import { ChevronDown } from 'lucide-react';
 import { UserContext } from "../Context/UserContext";
 import { useContext } from "react";
 import Card from "../Components/Card";
+import Plant from "../assets/plant.png"
+import Plant2 from "../assets/plant-2.png"
+import Plant3 from "../assets/plant-3.png"
+
 
 function Home() {
     const { user } = useContext(UserContext);
@@ -65,11 +69,11 @@ function Home() {
                 </Accordion>
             </div>
 
-            <div className="w-full py-[200px] mt-20 bg-[#1B2316] flex items-center justify-center">
+            <div className="w-full py-[250px] mt-20 bg-[#1B2316] flex items-center justify-center">
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-20 xl:gap-y-32 gap-x-5">
-                    <Card />
-                    <Card />
-                    <Card />
+                    <Card img={Plant} />
+                    <Card img={Plant2} />
+                    <Card img={Plant3} />
                 </div>
             </div>
         </section>
