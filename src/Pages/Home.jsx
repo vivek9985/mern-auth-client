@@ -6,7 +6,6 @@ import Card from "../Components/Card";
 
 function Home() {
     const { user } = useContext(UserContext);
-
     const AccordionItem = ({ header, initialEntered, ...rest }) => {
         return (
             <Item
@@ -66,8 +65,12 @@ function Home() {
                 </Accordion>
             </div>
 
-            <div className="w-full h-screen bg-[#1B2316] flex items-center justify-center">
-                <Card />
+            <div className="w-full py-[200px] mt-20 bg-[#1B2316] flex items-center justify-center">
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-20 xl:gap-y-32 gap-x-5">
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
             </div>
         </section>
     );

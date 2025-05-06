@@ -1,8 +1,12 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
 
 .card {
-    background-image: url(./assets/card-bg.svg);
+  background-image: url(./assets/card-bg.svg);
 }
