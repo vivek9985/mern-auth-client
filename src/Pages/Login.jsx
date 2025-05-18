@@ -31,6 +31,7 @@ const Login = () => {
                 navigate("/")
                 toast.success("Logged in!")
                 localStorage.setItem("user", JSON.stringify(res?.data?.data?._id));
+                window.location.reload()
             } else {
                 toast.error(res?.data?.message)
             }

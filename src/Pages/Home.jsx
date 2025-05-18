@@ -6,6 +6,7 @@ import Card from "../Components/Card";
 import Plant from "../assets/plant.png"
 import Plant2 from "../assets/plant-2.png"
 import Plant3 from "../assets/plant-3.png"
+import Test from "../Components/Test";
 
 
 function Home() {
@@ -37,7 +38,7 @@ function Home() {
 
     return (
         <section>
-            <div>
+            <div className="hidden">
                 <h3 className="text-8xl text-center text-white mt-30 leading-[120%] tracking-wide flex flex-col">
                     <span>Hi <strong className="text-purple-500 uppercase">
                         {user ? user?.name : "Developers"}
@@ -46,7 +47,7 @@ function Home() {
                 </h3>
             </div>
 
-            <div className="w-10/12 mx-auto space-y-4 mt-20">
+            <div className="w-10/12 mx-auto space-y-4 mt-20 hidden">
                 <Accordion transition transitionTimeout={300}>
                     <AccordionItem header="Do you offer loan services?" initialEntered={true}>
                         Yes, We offer loans with some of the landing banks in the country like Access Bank, GTB Bank, Werma Bank etc.
@@ -69,13 +70,14 @@ function Home() {
                 </Accordion>
             </div>
 
-            <div className="w-full py-[250px] mt-20 bg-[#1B2316] flex items-center justify-center">
+            <div className="w-full py-[250px] mt-20 bg-[#1B2316] hidden items-center justify-center">
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-20 xl:gap-y-32 gap-x-5">
                     <Card img={Plant} />
                     <Card img={Plant2} />
                     <Card img={Plant3} />
                 </div>
             </div>
+            <Test />
         </section>
     );
 }

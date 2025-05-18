@@ -11,10 +11,13 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/v1/user/${currentUser}`, {
-                    withCredentials: true
-                });
-                setUser(res?.data?.data)
+                if (currentUser) {
+                    const res = await axios.get(`http://localhost:5000/api/v1/user/${currentUser}`, {
+                        withCredentials: true
+                    });
+                    setUser(res?.data?.data)
+                }
+                // console.log(res)
             } catch (err) {
                 console.error(err.response?.data?.message || err.message);
             }

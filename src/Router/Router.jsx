@@ -12,6 +12,7 @@ import { UserContext } from "../Context/UserContext";
 import { useContext } from "react";
 import UserDetails from "../Pages/UserDetails";
 import { BadgeCheck } from "lucide-react";
+import About from "../Pages/About";
 
 function App() {
     const { user } = useContext(UserContext)
@@ -25,6 +26,7 @@ function App() {
                 toast.success(res?.data?.message)
                 navigate("/")
                 localStorage.removeItem("user");
+                window.location.reload()
             } else {
                 toast.error(res?.data?.message)
             }
@@ -43,20 +45,27 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
-                        <Route path="/users" element={<Users />} />
+                        {user?.isAccountVerified &&
+                            <Route path="/users" element={<Users />} />
+                        }
                         <Route path="/user/:id" element={<UserDetails />} />
                         {user &&
                             <Route path="/profile" element={<Profile />} />
                         }
                         <Route path="/verify-account" element={<VerifyAccount />} />
+                        <Route path="/about" element={<About />} />
                         <Route path="*" element={<h1 className="text-white text-center mt-20 flex flex-col items-center justify-center gap-3"><span className="text-9xl font-black">404</span><span className="text-xl font-medium">Page Not Found</span></h1>} />
                     </Route>
                 </Routes>
             </div>
             <div className={`absolute right-5 top-4 ${user ? "block" : "hidden"}`}>
                 <div className="relative group">
-                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center cursor-pointer">
-                        <span className="font-semibold text-black text-2xl leading-[80%] uppercase">{user?.name.slice(0, 1)}</span>
+                    <div className="w-12 h-12 rounded-full bg-white overflow-hidden flex items-center justify-center cursor-pointer">
+                        {user?.avatar ?
+                            <img className="w-full h-full object-center object-cover" src={user?.avatar} alt="" />
+                            :
+                            <span className="font-semibold text-black text-2xl leading-[80%] uppercase">{user?.name.slice(0, 1)}</span>
+                        }
                     </div>
                     <div className="scale-y-0 opacity-0 group-hover:opacity-100 group-hover:scale-y-100 duration-300 bg-white rounded-2xl w-[250px] p-4 absolute right-0 top-[calc(100%_+_5px)]">
                         <ul className="flex flex-col gap-3 text-black font-medium text-xl">
