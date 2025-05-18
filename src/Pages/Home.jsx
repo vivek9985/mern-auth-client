@@ -77,7 +77,7 @@ function Home() {
                     <Card img={Plant3} />
                 </div>
             </div>
-            {/* <Test /> */}
+            <Test />
         </section>
     );
 }
