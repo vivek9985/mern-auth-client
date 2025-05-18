@@ -38,8 +38,8 @@ function Home() {
 
     return (
         <section>
-            <div className="hidden">
-                <h3 className="text-8xl text-center text-white mt-30 leading-[120%] tracking-wide flex flex-col">
+            <div className="flex justify-center">
+                <h3 className="text-5xl text-center text-white mt-30 leading-[120%] tracking-wide flex flex-col">
                     <span>Hi <strong className="text-purple-500 uppercase">
                         {user ? user?.name : "Developers"}
                     </strong> </span>
@@ -77,7 +77,7 @@ function Home() {
                     <Card img={Plant3} />
                 </div>
             </div>
-            <Test />
+            {/* <Test /> */}
         </section>
     );
 }
